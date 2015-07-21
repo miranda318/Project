@@ -15,6 +15,7 @@
 		B98F07CE1B5DE60B006C8C7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F07CD1B5DE60B006C8C7C /* Images.xcassets */; };
 		B98F07D11B5DE60B006C8C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98F07CF1B5DE60B006C8C7C /* LaunchScreen.xib */; };
 		B98F07DD1B5DE60B006C8C7C /* BeautyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */; };
+		B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07E71B5DF3B7006C8C7C /* PlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		B98F07D61B5DE60B006C8C7C /* BeautyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F07DB1B5DE60B006C8C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeautyTests.m; sourceTree = "<group>"; };
+		B98F07E61B5DF3B7006C8C7C /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		B98F07E71B5DF3B7006C8C7C /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				B98F07C51B5DE60B006C8C7C /* FirstViewController.m */,
 				B98F07C71B5DE60B006C8C7C /* SecondViewController.h */,
 				B98F07C81B5DE60B006C8C7C /* SecondViewController.m */,
+				B98F07E61B5DF3B7006C8C7C /* PlayerView.h */,
+				B98F07E71B5DF3B7006C8C7C /* PlayerView.m */,
 				B98F07CA1B5DE60B006C8C7C /* Main.storyboard */,
 				B98F07CD1B5DE60B006C8C7C /* Images.xcassets */,
 				B98F07CF1B5DE60B006C8C7C /* LaunchScreen.xib */,
@@ -228,6 +233,7 @@
 				B98F07C31B5DE60B006C8C7C /* AppDelegate.m in Sources */,
 				B98F07C61B5DE60B006C8C7C /* FirstViewController.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,
+				B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +430,7 @@
 				B98F07E21B5DE60B006C8C7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B98F07E31B5DE60B006C8C7C /* Build configuration list for PBXNativeTarget "BeautyTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +439,7 @@
 				B98F07E51B5DE60B006C8C7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
