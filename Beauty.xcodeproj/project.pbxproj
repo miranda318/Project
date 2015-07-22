@@ -16,6 +16,7 @@
 		B98F07D11B5DE60B006C8C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98F07CF1B5DE60B006C8C7C /* LaunchScreen.xib */; };
 		B98F07DD1B5DE60B006C8C7C /* BeautyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */; };
 		B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07E71B5DF3B7006C8C7C /* PlayerView.m */; };
+		B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeautyTests.m; sourceTree = "<group>"; };
 		B98F07E61B5DF3B7006C8C7C /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		B98F07E71B5DF3B7006C8C7C /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		B9DC0F5B1B5F3873009E69F9 /* TPFloatRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPFloatRatingView.h; sourceTree = "<group>"; };
+		B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPFloatRatingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 			children = (
 				B98F07C11B5DE60B006C8C7C /* AppDelegate.h */,
 				B98F07C21B5DE60B006C8C7C /* AppDelegate.m */,
+				B9DC0F5B1B5F3873009E69F9 /* TPFloatRatingView.h */,
+				B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */,
 				B98F07C41B5DE60B006C8C7C /* FirstViewController.h */,
 				B98F07C51B5DE60B006C8C7C /* FirstViewController.m */,
 				B98F07C71B5DE60B006C8C7C /* SecondViewController.h */,
@@ -233,6 +238,7 @@
 				B98F07C31B5DE60B006C8C7C /* AppDelegate.m in Sources */,
 				B98F07C61B5DE60B006C8C7C /* FirstViewController.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,
+				B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */,
 				B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
