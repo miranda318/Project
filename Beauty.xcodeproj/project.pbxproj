@@ -28,6 +28,11 @@
 		C59856BF1B62C02E000E1202 /* TestParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856BE1B62C02E000E1202 /* TestParse.m */; };
 		C59856C21B62C150000E1202 /* SaveToParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C11B62C150000E1202 /* SaveToParse.m */; };
 		C59856C51B62C48D000E1202 /* QueryFromParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C41B62C48D000E1202 /* QueryFromParse.m */; };
+		C59856CD1B62CA00000E1202 /* HMACSHA256.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C81B62CA00000E1202 /* HMACSHA256.m */; };
+		C59856CE1B62CA00000E1202 /* Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856CA1B62CA00000E1202 /* Demo.m */; };
+		C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856CC1B62CA00000E1202 /* XMLReader.m */; };
+		C59856D21B62CA3B000E1202 /* AmazonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856D11B62CA3B000E1202 /* AmazonAPI.m */; };
+		C59856D51B62CBDC000E1202 /* TestAmazonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */; };
 		C5F7259B1B62BD800037E409 /* Readme_weifengcui.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F7259A1B62BD800037E409 /* Readme_weifengcui.txt */; };
 		C5F7259F1B62BE860037E409 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F7259D1B62BE860037E409 /* Bolts.framework */; };
 		C5F725A01B62BE860037E409 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F7259E1B62BE860037E409 /* Parse.framework */; };
@@ -97,6 +102,16 @@
 		C59856C11B62C150000E1202 /* SaveToParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveToParse.m; path = Beauty/SaveToParse.m; sourceTree = "<group>"; };
 		C59856C31B62C48D000E1202 /* QueryFromParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QueryFromParse.h; path = Beauty/QueryFromParse.h; sourceTree = "<group>"; };
 		C59856C41B62C48D000E1202 /* QueryFromParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QueryFromParse.m; path = Beauty/QueryFromParse.m; sourceTree = "<group>"; };
+		C59856C71B62CA00000E1202 /* HMACSHA256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMACSHA256.h; sourceTree = "<group>"; };
+		C59856C81B62CA00000E1202 /* HMACSHA256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMACSHA256.m; sourceTree = "<group>"; };
+		C59856C91B62CA00000E1202 /* Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.h; sourceTree = "<group>"; };
+		C59856CA1B62CA00000E1202 /* Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo.m; sourceTree = "<group>"; };
+		C59856CB1B62CA00000E1202 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		C59856CC1B62CA00000E1202 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		C59856D01B62CA3B000E1202 /* AmazonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonAPI.h; sourceTree = "<group>"; };
+		C59856D11B62CA3B000E1202 /* AmazonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonAPI.m; sourceTree = "<group>"; };
+		C59856D31B62CBDC000E1202 /* TestAmazonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAmazonAPI.h; sourceTree = "<group>"; };
+		C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAmazonAPI.m; sourceTree = "<group>"; };
 		C5F7259A1B62BD800037E409 /* Readme_weifengcui.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_weifengcui.txt; sourceTree = "<group>"; };
 		C5F7259D1B62BE860037E409 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C5F7259E1B62BE860037E409 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -229,9 +244,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C59856C61B62C9DF000E1202 /* Amazon API */ = {
+			isa = PBXGroup;
+			children = (
+				C59856C71B62CA00000E1202 /* HMACSHA256.h */,
+				C59856C81B62CA00000E1202 /* HMACSHA256.m */,
+				C59856C91B62CA00000E1202 /* Demo.h */,
+				C59856CA1B62CA00000E1202 /* Demo.m */,
+				C59856CB1B62CA00000E1202 /* XMLReader.h */,
+				C59856CC1B62CA00000E1202 /* XMLReader.m */,
+				C59856D01B62CA3B000E1202 /* AmazonAPI.h */,
+				C59856D11B62CA3B000E1202 /* AmazonAPI.m */,
+				C59856D31B62CBDC000E1202 /* TestAmazonAPI.h */,
+				C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */,
+			);
+			name = "Amazon API";
+			sourceTree = "<group>";
+		};
 		C5F725991B62BD4E0037E409 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C59856C61B62C9DF000E1202 /* Amazon API */,
 				C5F725B91B62BFA50037E409 /* Parse */,
 				C5F7259A1B62BD800037E409 /* Readme_weifengcui.txt */,
 			);
@@ -375,12 +408,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CAFD841B616EC10035EEA1 /* UserReviewTableViewCell.m in Sources */,
+				C59856CE1B62CA00000E1202 /* Demo.m in Sources */,
+				C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */,
 				B9CAFD7B1B616D100035EEA1 /* SearchResultTableViewController.m in Sources */,
 				B9CAFD8D1B61745E0035EEA1 /* AddReviewViewController.m in Sources */,
+				C59856CD1B62CA00000E1202 /* HMACSHA256.m in Sources */,
+				C59856D51B62CBDC000E1202 /* TestAmazonAPI.m in Sources */,
 				B9CAFD7E1B616D720035EEA1 /* ProductListTableViewCell.m in Sources */,
 				B9CAFD8A1B6171700035EEA1 /* ScanBarcodeViewController.m in Sources */,
 				C59856C21B62C150000E1202 /* SaveToParse.m in Sources */,
 				B9CAFD931B6178710035EEA1 /* FavouriteTableViewCell.m in Sources */,
+				C59856D21B62CA3B000E1202 /* AmazonAPI.m in Sources */,
 				B98F07C31B5DE60B006C8C7C /* AppDelegate.m in Sources */,
 				B9CAFD811B616E8B0035EEA1 /* ProductReviewTableViewController.m in Sources */,
 				C59856BF1B62C02E000E1202 /* TestParse.m in Sources */,

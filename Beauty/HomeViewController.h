@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TestParse.h"
+#import "TestAmazonAPI.h"
 
 @interface HomeViewController : UIViewController
 

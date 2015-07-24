@@ -57,7 +57,8 @@
 
 #pragma mark test model
 -(void)testServer{
-    [TestParse test];
+    //[TestParse test];
+    [TestAmazonAPI test];
 }
 
 
