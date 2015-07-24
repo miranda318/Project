@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TestParse.h"
 
 @interface HomeViewController : UIViewController
+
+-(void)testServer; // test the parse and amazon api
 
 @end

@@ -21,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //test server
+    [self testServer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +53,12 @@
         SearchResultTableViewController *destionationController = segue.destinationViewController;
         destionationController.searchText = self.searchString;
     }}
+
+
+#pragma mark test model
+-(void)testServer{
+    [TestParse test];
+}
 
 
 @end
