@@ -16,7 +16,7 @@ Product review table view controller
 o	section 1: product image, product name, brand, rating view to display rating (average of all the ratings), price, number of likes (not implement according to current plan).
 o	Section 2: 2 buttons
 o	Section 3: review summary from Amazon API
--	Table view: individual user review
+-	Table view cell: dynamic cell for individual user review
 
 Add Review view controller 
 -	Cancel: back to product review table view controller
