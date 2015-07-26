@@ -14,7 +14,6 @@
 		B98F07D11B5DE60B006C8C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98F07CF1B5DE60B006C8C7C /* LaunchScreen.xib */; };
 		B98F07DD1B5DE60B006C8C7C /* BeautyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */; };
 		B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07E71B5DF3B7006C8C7C /* PlayerView.m */; };
-		B9CAFD781B616C2F0035EEA1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD771B616C2F0035EEA1 /* HomeViewController.m */; };
 		B9CAFD7B1B616D100035EEA1 /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD7A1B616D100035EEA1 /* SearchResultTableViewController.m */; };
 		B9CAFD7E1B616D720035EEA1 /* ProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD7D1B616D720035EEA1 /* ProductListTableViewCell.m */; };
 		B9CAFD811B616E8B0035EEA1 /* ProductReviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD801B616E8B0035EEA1 /* ProductReviewTableViewController.m */; };
@@ -48,6 +47,7 @@
 		C5F725B41B62BEE10037E409 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F725B31B62BEE10037E409 /* libsqlite3.dylib */; };
 		C5F725B61B62BEEE0037E409 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F725B51B62BEEE0037E409 /* Accounts.framework */; };
 		C5F725B81B62BEF50037E409 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F725B71B62BEF50037E409 /* Social.framework */; };
+		E6E2201C1B644AE700B88591 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E2201B1B644AE700B88591 /* SearchTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +74,6 @@
 		B98F07DC1B5DE60B006C8C7C /* BeautyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeautyTests.m; sourceTree = "<group>"; };
 		B98F07E61B5DF3B7006C8C7C /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		B98F07E71B5DF3B7006C8C7C /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
-		B9CAFD761B616C2F0035EEA1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		B9CAFD771B616C2F0035EEA1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		B9CAFD791B616D100035EEA1 /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
 		B9CAFD7A1B616D100035EEA1 /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		B9CAFD7C1B616D720035EEA1 /* ProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListTableViewCell.h; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		C5F725B31B62BEE10037E409 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C5F725B51B62BEEE0037E409 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C5F725B71B62BEF50037E409 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E6E2201A1B644AE700B88591 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
+		E6E2201B1B644AE700B88591 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +190,8 @@
 				B98F07E71B5DF3B7006C8C7C /* PlayerView.m */,
 				B9DC0F5B1B5F3873009E69F9 /* TPFloatRatingView.h */,
 				B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */,
-				B9CAFD761B616C2F0035EEA1 /* HomeViewController.h */,
-				B9CAFD771B616C2F0035EEA1 /* HomeViewController.m */,
+				E6E2201A1B644AE700B88591 /* SearchTableViewController.h */,
+				E6E2201B1B644AE700B88591 /* SearchTableViewController.m */,
 				B9CAFD791B616D100035EEA1 /* SearchResultTableViewController.h */,
 				B9CAFD7A1B616D100035EEA1 /* SearchResultTableViewController.m */,
 				B9CAFD7C1B616D720035EEA1 /* ProductListTableViewCell.h */,
@@ -412,6 +412,7 @@
 				C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */,
 				B9CAFD7B1B616D100035EEA1 /* SearchResultTableViewController.m in Sources */,
 				B9CAFD8D1B61745E0035EEA1 /* AddReviewViewController.m in Sources */,
+				E6E2201C1B644AE700B88591 /* SearchTableViewController.m in Sources */,
 				C59856CD1B62CA00000E1202 /* HMACSHA256.m in Sources */,
 				C59856D51B62CBDC000E1202 /* TestAmazonAPI.m in Sources */,
 				B9CAFD7E1B616D720035EEA1 /* ProductListTableViewCell.m in Sources */,
@@ -426,7 +427,6 @@
 				B9CAFD871B6170B40035EEA1 /* SearchProductTableViewController.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,
 				B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */,
-				B9CAFD781B616C2F0035EEA1 /* HomeViewController.m in Sources */,
 				B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */,
 				C59856C51B62C48D000E1202 /* QueryFromParse.m in Sources */,
 			);
