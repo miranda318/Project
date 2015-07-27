@@ -16,3 +16,16 @@ July 24, 14:38
 
 --read product info, using upc from Amazon
 [AmazonAPI getProductInfoFromUPC:(NSString*)upcID]
+
+------------------------------------------------------
+
+July 27,15
+
+Add Facebook login
+
+Steps:
+
+-add two frame work, facebookcore and facebook login
+-info.plist
+-in appdelegate.m
+-add code to viewcontroller
