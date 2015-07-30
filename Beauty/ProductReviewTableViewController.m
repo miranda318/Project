@@ -8,6 +8,7 @@
 
 #import "ProductReviewTableViewController.h"
 #import "TPFloatRatingView.h"
+#import "FacebookShareTest.h"
 
 @interface ProductReviewTableViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
@@ -109,4 +110,8 @@
 }
 */
 
+- (IBAction)shareOnFacebook:(id)sender {
+    [FacebookShareTest shareOnFacebook:@"hello" viewController:self];
+    
+}
 @end
