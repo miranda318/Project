@@ -15,8 +15,12 @@
 +(void)UPCRequest; // get the signed upc request
 
 
-+(NSString*)getUPCURL;
+
 +(NSString*)getUPCURL:(NSString*)upcID;
++(NSString*)getReviewsURL:(NSString*)upcID;
++(NSString*)getReviewsURLByASIN:(NSString *)asin;
+
+
 
 /*
 Adding the following to your Info.plist will disable ATS

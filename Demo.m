@@ -12,8 +12,8 @@
 
 +(void)UPCRequest{
 
-    NSString* url = [self getUPCURL];
-    NSLog(@"url :%@",url);
+//    NSString* url = [self getUPCURL];
+//    NSLog(@"url :%@",url);
 
 
 }
@@ -22,18 +22,7 @@
 
 
 
-+(NSString*)getUPCURL{
-    
-    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
-    NSString* AWS_SECRET=@"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";
-    
-    NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Large&SearchIndex=All&IdType=UPC&ItemId=635753490879&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",AWSAccessKeyID];
-    
-    NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
-    NSURL *url	= [NSURL URLWithString:signedURLString];
-    return url;
 
-}
 
 +(NSString*)getUPCURL:(NSString*)upcID{
     
@@ -49,6 +38,38 @@
 }
 
 
++(NSString*)getReviewsURL:(NSString*)upcID{
+    return [self getReviewSURL_BYTYPE:upcID type:@"UPC"];
+
+}
+
++(NSString*)getReviewsURLByASIN:(NSString *)asin{
+
+    return [self getReviewSURL_BYTYPE:asin type:@"ASIN"];
+}
+
+
++(NSString*)getReviewSURL_BYTYPE:(NSString*)upcID type:(NSString*)type{
+
+    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
+    NSString* AWS_SECRET=@"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";
+    
+    NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Reviews&IdType=%@&ItemId=%@&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",type,upcID,AWSAccessKeyID];
+    
+    if([type isEqualToString:@"UPC"]){
+    
+        urlString = [urlString stringByAppendingString:@"&SearchIndex=All"];
+    }
+    
+    NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
+    NSURL *url	= [NSURL URLWithString:signedURLString];
+    return url;
+
+}
+
+
+
+
 +(NSString*)getKeyWordSearchURL:(NSString*)keyword{
     NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
     NSString* AWS_SECRET=@"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";
@@ -58,7 +79,6 @@
     NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
     NSURL *url	= [NSURL URLWithString:signedURLString];
     return url;
-    
     
 }
 

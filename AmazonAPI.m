@@ -14,9 +14,6 @@
     
     
     NSString* url = [NSString stringWithFormat:@"%@",[Demo getUPCURL:upcID] ];
-    
-    
-    // [Demo testXMLReader]; //test passed
     return [self urlToDic:url];
    
 
@@ -37,6 +34,14 @@
 //search by key word
 +(NSDictionary*)getProductsByKeyWorkds:(NSString *)keyWord{
     NSString* url = [NSString stringWithFormat:@"%@",[Demo getKeyWordSearchURL:keyWord] ];
+    return [self urlToDic:url];
+
+}
+
+
+//search customer reviews
++(NSDictionary*)getCustomerReviews:(NSString *)upcID{
+    NSString* url = [NSString stringWithFormat:@"%@",[Demo getReviewsURL:upcID] ];
     return [self urlToDic:url];
 
 }
