@@ -25,7 +25,7 @@
     self.title = @"Search a Product";
     
     //test server
-    //[self testServer];
+    [self testServer];
 
 
     // Hard-coded table

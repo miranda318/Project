@@ -15,6 +15,6 @@
 
 +(NSDictionary*)getProductInfoFromUPC:(NSString*)upcID;//find the info of a product according to upc
 
-
++(NSDictionary*)getProductsByKeyWorkds:(NSString*)keyWord;
 
 @end

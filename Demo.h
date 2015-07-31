@@ -30,7 +30,7 @@ Adding the following to your Info.plist will disable ATS
  
  */
 +(NSDictionary*)getDicFromURL:(NSString*)url;
-
++(NSString*)getKeyWordSearchURL:(NSString*)keyword;
 
 
 

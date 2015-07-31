@@ -33,4 +33,13 @@
 }
 
 
+
+//search by key word
++(NSDictionary*)getProductsByKeyWorkds:(NSString *)keyWord{
+    NSString* url = [NSString stringWithFormat:@"%@",[Demo getKeyWordSearchURL:keyWord] ];
+    return [self urlToDic:url];
+
+}
+
+
 @end

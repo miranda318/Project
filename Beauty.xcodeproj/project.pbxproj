@@ -26,6 +26,7 @@
 		B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */; };
 		C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */; };
 		C55892531B66B2FB00A8D27C /* sign-in-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = C55892521B66B2FB00A8D27C /* sign-in-facebook.png */; };
+		C594D2AA1B6B196100BA15C6 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = C594D2A91B6B196100BA15C6 /* Product.m */; };
 		C59856BF1B62C02E000E1202 /* TestParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856BE1B62C02E000E1202 /* TestParse.m */; };
 		C59856C21B62C150000E1202 /* SaveToParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C11B62C150000E1202 /* SaveToParse.m */; };
 		C59856C51B62C48D000E1202 /* QueryFromParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C41B62C48D000E1202 /* QueryFromParse.m */; };
@@ -99,6 +100,8 @@
 		C51FCA621B6A8D59001FA62E /* FacebookShareTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareTest.h; sourceTree = "<group>"; };
 		C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareTest.m; sourceTree = "<group>"; };
 		C55892521B66B2FB00A8D27C /* sign-in-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-facebook.png"; sourceTree = "<group>"; };
+		C594D2A81B6B196100BA15C6 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		C594D2A91B6B196100BA15C6 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		C59856BD1B62C02E000E1202 /* TestParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestParse.h; path = Beauty/TestParse.h; sourceTree = "<group>"; };
 		C59856BE1B62C02E000E1202 /* TestParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestParse.m; path = Beauty/TestParse.m; sourceTree = "<group>"; };
 		C59856C01B62C150000E1202 /* SaveToParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveToParse.h; path = Beauty/SaveToParse.h; sourceTree = "<group>"; };
@@ -316,6 +319,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C594D2A71B6B195100BA15C6 /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				C594D2A81B6B196100BA15C6 /* Product.h */,
+				C594D2A91B6B196100BA15C6 /* Product.m */,
+			);
+			name = Bean;
+			sourceTree = "<group>";
+		};
 		C59856C61B62C9DF000E1202 /* Amazon API */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +348,7 @@
 		C5F725991B62BD4E0037E409 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C594D2A71B6B195100BA15C6 /* Bean */,
 				C558924B1B66A95200A8D27C /* Facebook */,
 				C59856C61B62C9DF000E1202 /* Amazon API */,
 				C5F725B91B62BFA50037E409 /* Parse */,
@@ -502,6 +515,7 @@
 				C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,
 				B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */,
+				C594D2AA1B6B196100BA15C6 /* Product.m in Sources */,
 				B98F07E81B5DF3B7006C8C7C /* PlayerView.m in Sources */,
 				C59856C51B62C48D000E1202 /* QueryFromParse.m in Sources */,
 			);
