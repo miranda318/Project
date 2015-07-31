@@ -25,9 +25,6 @@
 		B9CAFD931B6178710035EEA1 /* FavouriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD921B6178710035EEA1 /* FavouriteTableViewCell.m */; };
 		B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */; };
 		C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */; };
-		C558924A1B66A90A00A8D27C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55892491B66A90A00A8D27C /* LoginViewController.m */; };
-		C558924E1B66A9DE00A8D27C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C558924C1B66A9DE00A8D27C /* FBSDKCoreKit.framework */; };
-		C558924F1B66A9DE00A8D27C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C558924D1B66A9DE00A8D27C /* FBSDKLoginKit.framework */; };
 		C55892531B66B2FB00A8D27C /* sign-in-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = C55892521B66B2FB00A8D27C /* sign-in-facebook.png */; };
 		C59856BF1B62C02E000E1202 /* TestParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856BE1B62C02E000E1202 /* TestParse.m */; };
 		C59856C21B62C150000E1202 /* SaveToParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856C11B62C150000E1202 /* SaveToParse.m */; };
@@ -101,10 +98,6 @@
 		B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPFloatRatingView.m; sourceTree = "<group>"; };
 		C51FCA621B6A8D59001FA62E /* FacebookShareTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareTest.h; sourceTree = "<group>"; };
 		C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareTest.m; sourceTree = "<group>"; };
-		C55892481B66A90A00A8D27C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		C55892491B66A90A00A8D27C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		C558924C1B66A9DE00A8D27C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		C558924D1B66A9DE00A8D27C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C55892521B66B2FB00A8D27C /* sign-in-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-facebook.png"; sourceTree = "<group>"; };
 		C59856BD1B62C02E000E1202 /* TestParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestParse.h; path = Beauty/TestParse.h; sourceTree = "<group>"; };
 		C59856BE1B62C02E000E1202 /* TestParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestParse.m; path = Beauty/TestParse.m; sourceTree = "<group>"; };
@@ -156,11 +149,9 @@
 				C5F725AA1B62BEBE0037E409 /* QuartzCore.framework in Frameworks */,
 				C5F725A81B62BEB50037E409 /* CoreLocation.framework in Frameworks */,
 				C5F725A61B62BEAD0037E409 /* CoreGraphics.framework in Frameworks */,
-				C558924E1B66A9DE00A8D27C /* FBSDKCoreKit.framework in Frameworks */,
 				C5F725A41B62BEA50037E409 /* CFNetwork.framework in Frameworks */,
 				C5F725A21B62BE9E0037E409 /* AudioToolbox.framework in Frameworks */,
 				C5F725A01B62BE860037E409 /* Parse.framework in Frameworks */,
-				C558924F1B66A9DE00A8D27C /* FBSDKLoginKit.framework in Frameworks */,
 				C5F7259F1B62BE860037E409 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,8 +304,6 @@
 		C55892501B66ABC200A8D27C /* Facebook_Login */ = {
 			isa = PBXGroup;
 			children = (
-				C55892481B66A90A00A8D27C /* LoginViewController.h */,
-				C55892491B66A90A00A8D27C /* LoginViewController.m */,
 			);
 			name = Facebook_Login;
 			sourceTree = "<group>";
@@ -358,8 +347,6 @@
 		C5F7259C1B62BDA00037E409 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				C558924C1B66A9DE00A8D27C /* FBSDKCoreKit.framework */,
-				C558924D1B66A9DE00A8D27C /* FBSDKLoginKit.framework */,
 				C5F725B71B62BEF50037E409 /* Social.framework */,
 				C5F725B51B62BEEE0037E409 /* Accounts.framework */,
 				C5F725B31B62BEE10037E409 /* libsqlite3.dylib */,
@@ -495,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CAFD841B616EC10035EEA1 /* UserReviewTableViewCell.m in Sources */,
-				C558924A1B66A90A00A8D27C /* LoginViewController.m in Sources */,
 				C59856CE1B62CA00000E1202 /* Demo.m in Sources */,
 				C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */,
 				B9CAFD7B1B616D100035EEA1 /* SearchResultTableViewController.m in Sources */,
