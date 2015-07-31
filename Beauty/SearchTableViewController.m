@@ -25,7 +25,7 @@
     self.title = @"Search a Product";
     
     //test server
-    [self testServer];
+    //[self testServer];
 
 
     // Hard-coded table
@@ -126,7 +126,17 @@
     {
         SearchResultTableViewController *destionationController = segue.destinationViewController;
         destionationController.searchText = self.searchString;
-    }}
+    }
+    
+    if ([[segue identifier] isEqualToString:@"toSearchPrpdoctBySearch"])
+    {
+        SearchResultTableViewController *destionationController = segue.destinationViewController;
+        destionationController.searchText = self.searchString;
+    }
+
+}
+
+
 
 
 #pragma mark test model

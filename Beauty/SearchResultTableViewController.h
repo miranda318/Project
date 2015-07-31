@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SearchResultTableViewController.h"
 #import "ProductListTableViewCell.h"
+#import "AmazonAPI.h"
 
 @interface SearchResultTableViewController : UITableViewController
 @property (strong, nonatomic) NSString *searchText;
+@property NSArray *cellList;
+
+
 @end
