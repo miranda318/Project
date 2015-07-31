@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J0U-8k-q4O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -16,7 +16,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="109" id="Voh-qR-ocw" customClass="ProductListTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ProductListTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductListTableViewCell" rowHeight="109" id="Voh-qR-ocw" customClass="ProductListTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="375" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Voh-qR-ocw" id="cPe-hN-SSq">
@@ -92,12 +92,11 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="brandLabel" destination="XYf-aS-26B" id="wVb-3a-dmC"/>
-                                    <outlet property="priceLabel" destination="Kwi-9K-f2F" id="dEH-Pv-hc4"/>
-                                    <outlet property="productImage" destination="XSN-n6-Pn4" id="VwP-Hs-AWN"/>
-                                    <outlet property="productName" destination="PtR-1T-GIr" id="U41-Ht-1pn"/>
-                                    <outlet property="ratingView" destination="Eam-Be-Xuf" id="Fv9-0g-GbF"/>
-                                    <outlet property="reviewNumLabel" destination="9Gs-bX-odd" id="xFr-Wr-aYM"/>
+                                    <outlet property="brandLabel" destination="XYf-aS-26B" id="gHr-wM-Feb"/>
+                                    <outlet property="productImage" destination="XSN-n6-Pn4" id="IQp-te-5lt"/>
+                                    <outlet property="productNameLabel" destination="PtR-1T-GIr" id="4XX-g2-e8b"/>
+                                    <outlet property="ratingView" destination="Eam-Be-Xuf" id="DoY-Gh-bFl"/>
+                                    <outlet property="reviewNumLabel" destination="9Gs-bX-odd" id="ePo-O3-C6j"/>
                                     <segue destination="J0U-8k-q4O" kind="show" id="STV-Eh-s42"/>
                                 </connections>
                             </tableViewCell>
@@ -239,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aU-7p-hn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938.5" y="-462.5"/>
+            <point key="canvasLocation" x="2851.5" y="-494.5"/>
         </scene>
         <!--Product Review Table View Controller-->
         <scene sceneID="kjr-eD-drV">
@@ -768,7 +767,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONi-lK-B69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="-652"/>
+            <point key="canvasLocation" x="1552.5" y="-509.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="41h-sq-US3">
@@ -1354,7 +1353,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDp-oQ-Ms9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="865"/>
+            <point key="canvasLocation" x="681.5" y="998.5"/>
         </scene>
         <!--Favourite Table View Controller-->
         <scene sceneID="HVb-dI-scY">
@@ -1477,7 +1476,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeF-mX-xI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="84"/>
+            <point key="canvasLocation" x="1464.5" y="195.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="YBT-FY-cSW">
@@ -1509,7 +1508,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebl-QA-is2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="865"/>
+            <point key="canvasLocation" x="1453.5" y="998.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OeH-Qd-Hjo">
@@ -1552,7 +1551,7 @@
         <image name="treat_icon" width="180" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vXU-9q-54E"/>
         <segue reference="oTz-Hd-BZ7"/>
+        <segue reference="zNy-HW-d6J"/>
     </inferredMetricsTieBreakers>
 </document>

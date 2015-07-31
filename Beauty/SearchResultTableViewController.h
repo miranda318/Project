@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchResultTableViewController.h"
+#import "ProductListTableViewCell.h"
 
 @interface SearchResultTableViewController : UITableViewController
 @property (strong, nonatomic) NSString *searchText;

@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSString *searchString;
 @property (strong, nonatomic) NSArray *skinCareArray;
 @property (strong, nonatomic) NSArray *makeupArray;
-
 @end
 
 @implementation SearchTableViewController
@@ -26,17 +25,19 @@
     self.title = @"Search a Product";
     
     //test server
-    [self testServer];
+    //[self testServer];
 
-/*
+
     // Hard-coded table
     self.skinCareArray = @[@"Cleanser", @"Moisturize", @"Treatment", @"Mask", @"Sunscreen & Sun Protection", @"Other Needs"];
     self.makeupArray =@[@"Face Makeup", @"Eye Makeuo", @"Lips"];
-*/    
+   
     self.tableView.tableFooterView = [[UIView alloc] init];
 
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,6 +46,26 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
+}
+
+
+#pragma table view
+
+//select one cell
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //get search string
+    NSArray *array;
+    if(indexPath.section == 0){
+        array = _skinCareArray;
+    }else{
+        array = _makeupArray;
+    }
+    
+    _searchString = array[indexPath.row];
+    
+    //go to next view controller
+    [self performSegueWithIdentifier:@"toSearchPrpdoctBySearch" sender:self];
 }
 
 /*
