@@ -27,6 +27,8 @@
 @property AVCaptureInput* input;
 @property AVCaptureMetadataOutput* output;
 @property AVCaptureVideoPreviewLayer* prevLayer;
+@property UIView* highlightView;
+@property UILabel* label;
 
 @property NSString* upc;
 @end
@@ -35,11 +37,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _scanResultView = [[UIView alloc] init];
-    _scanResultView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
-    _scanResultView.layer.borderColor = [UIColor greenColor].CGColor;
-    _scanResultView.layer.borderWidth = 3;
-    [self.view addSubview:_scanResultView];
+    _highlightView = [[UIView alloc] init];
+    _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
+    _highlightView.layer.borderColor = [UIColor greenColor].CGColor;
+    _highlightView.layer.borderWidth = 3;
+    [self.view addSubview:_highlightView];
+    
+    _label = [[UILabel alloc] init];
+    _label.frame = CGRectMake(0, self.view.bounds.size.height - 40, self.view.bounds.size.width, 40);
+    _label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
+    _label.textColor = [UIColor whiteColor];
+    _label.textAlignment = NSTextAlignmentCenter;
+    _label.text = @"(none)";
+    [self.view addSubview:_label];
     
     _session = [[AVCaptureSession alloc] init];
     _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -65,8 +76,8 @@
     
     [_session startRunning];
     
-    [self.view bringSubviewToFront:_scanResultView];
-    
+    [self.view bringSubviewToFront:_highlightView];
+    [self.view bringSubviewToFront:_label];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,7 +88,7 @@
 #pragma mark - Scan
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    CGRect scanResultViewRect = CGRectZero;
+    CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
     NSString *detectionString = nil;
     NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
@@ -89,7 +100,7 @@
             if ([metadata.type isEqualToString:type])
             {
                 barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
-                scanResultViewRect = barCodeObject.bounds;
+                highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 break;
             }
@@ -98,15 +109,22 @@
         if (detectionString != nil)
         {
             _upc = detectionString;
+            _label.text = detectionString;
             break;
         }
         else{
-            _upc = @"";
+            _label.text = @"(none)";
+            _upc = @"none";
         }
         
+<<<<<<< HEAD
         NSLog(@"here is the upc %@",_upc);
         _scanResultView.frame = scanResultViewRect;
+=======
+>>>>>>> origin/master
     }
+    NSLog(@"%@",_upc);
+    _highlightView.frame = highlightViewRect;
     
 }
 
