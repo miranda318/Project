@@ -104,7 +104,7 @@
             _upc = @"";
         }
         
-        NSLog(@"%@",_upc);
+        NSLog(@"here is the upc %@",_upc);
         _scanResultView.frame = scanResultViewRect;
     }
     

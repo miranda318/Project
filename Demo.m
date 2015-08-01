@@ -82,6 +82,24 @@
     
 }
 
+
++(NSString*)getImagesURL:(NSString*)itemID{
+
+    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
+    NSString* AWS_SECRET=@"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";
+    
+    NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Images&IdType=ASIN&ItemId=%@&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",itemID,AWSAccessKeyID];
+    
+    NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
+    NSURL *url	= [NSURL URLWithString:signedURLString];
+    return url;
+
+
+}
+
+
+
+
 +(NSDictionary*)getDicFromURL:(NSString *)url{
 
     NSURL *URL = [NSURL URLWithString:url];

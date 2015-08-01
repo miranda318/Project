@@ -47,4 +47,13 @@
 }
 
 
+//search images
+
++(NSDictionary*)getProductImages:(NSString*)itemID{
+    NSString* url = [NSString stringWithFormat:@"%@",[Demo getImagesURL:itemID] ];
+    return [self urlToDic:url];
+    
+}
+
+
 @end
