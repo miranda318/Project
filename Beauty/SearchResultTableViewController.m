@@ -7,8 +7,10 @@
 //
 
 #import "SearchResultTableViewController.h"
+#import "ProductWebViewController.h"
 
 @interface SearchResultTableViewController ()
+@property NSDictionary* selectDic;//the selected dic
 
 @end
 
@@ -59,6 +61,22 @@
     NSDictionary* dic = [AmazonAPI getProductsByKeyWorkds:_searchText];
     _cellList = dic[@"ItemSearchResponse"][@"Items"][@"Item"];
     [self.tableView reloadData];
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _selectDic = _cellList[indexPath.row];
+    [self performSegueWithIdentifier:@"showProductWeb" sender:self];
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if([segue.identifier isEqualToString:@"showProductWeb"]){
+        ProductWebViewController* mvc = [segue destinationViewController];
+        mvc.itemDic = _selectDic;
+    }
+
 }
 
 

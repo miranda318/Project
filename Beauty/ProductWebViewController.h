@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property NSDictionary* itemDic;//the dic of item
+@property NSString* url; //the url string
 
 @end
