@@ -19,6 +19,4 @@
 +(NSDictionary*)getCustomerReviews:(NSString*)upcID;
 
 
-+(NSDictionary*)getProductImages:(NSString*)itemID;
-
 @end

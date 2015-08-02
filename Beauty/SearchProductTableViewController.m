@@ -7,15 +7,10 @@
 //
 
 #import "SearchProductTableViewController.h"
-#import "AmazonAPI.h"
-#import "ProductListTableViewCell.h"
-
 
 @interface SearchProductTableViewController () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *scanBarcodeButton;
-@property NSArray *cellList;// all the product
-@property NSMutableArray *imageURLList;
 
 @end
 
@@ -23,86 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     _imageURLList = [[NSMutableArray alloc] init];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-   
 }
-
-
-#pragma event
-//search
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar resignFirstResponder];
-    // Do the search...
-    
-    NSDictionary* dic = [AmazonAPI getProductsByKeyWorkds:searchBar.text];
-    _cellList = dic[@"ItemSearchResponse"][@"Items"][@"Item"];
-    
-    NSLog(@"cell count%d",_cellList.count);
-//    
-//    for(int i = 0; i < _cellList.count;i++){
-//        NSString* asin = _cellList[i][@"ASIN"][@"text"];
-//        NSDictionary* imageDic = [AmazonAPI getProductImages:asin];
-//        
-//        NSString* imageURL = imageDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"ImageSets"][@"ImageSet"][0][@"SmallImage"][@"URL"][@"text"];
-//        
-//        NSLog(@"%@",imageURL);
-//        [_imageURLList addObject:imageURL];
-//    }
-    
-    [self.tableView reloadData];
-}
-
-
-
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if(_cellList != nil){
-        return _cellList.count;
-    }else{
-        return 0;
-    }
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
 }
 
-
-
-
-
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ProductListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//
-//    //NSLog(@"%@",_imageURLList[indexPath.row]);
-//   // cell.productImage.image =
-//    
-////    NSURL *url = [NSURL URLWithString:_imageURLList[indexPath.row]];
-////    NSData *data = [NSData dataWithContentsOfURL:url];
-////    cell.productImage.image = [[UIImage alloc] initWithData:data];
-////
-//    
-//    cell.priceLabel.text = _cellList[indexPath.row][@"ItemAttributes"][@"Title"][@"text"];
-//    return cell;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
+    // Configure the cell...
     
-    UITableViewCell* basicCell = [tableView dequeueReusableCellWithIdentifier:@"basicCell"];
-    
-    basicCell.textLabel.text = _cellList[indexPath.row][@"ItemAttributes"][@"Title"][@"text"];
-    
-    return basicCell;
+    return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

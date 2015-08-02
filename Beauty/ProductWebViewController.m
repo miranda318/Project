@@ -29,7 +29,7 @@
 
 
 -(void)showWeb{
-    _url = _itemDic[@"DetailPageURL"][@"text"];
+    //_url = _itemDic[@"DetailPageURL"][@"text"];
     
     NSURL *websiteUrl = [NSURL URLWithString:_url];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];

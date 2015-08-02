@@ -11,9 +11,25 @@
 
 @interface ProductReviewTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *productName;
 
-- (IBAction)shareOnFacebook:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *brand;
 
+@property (weak, nonatomic) IBOutlet UIImageView *productImage;
 
+- (IBAction)showInformationInAmazon:(id)sender;
+- (IBAction)writeReview:(id)sender;
 
+@property NSDictionary* upcDic;
+
+@property NSDictionary* viewDic;
+/*  
+ key: title,brand,imageURL,webURL
+ */
+
+- (IBAction)addToFavorite:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *favButton;
+@property bool fromFavorite;
+@property NSMutableArray * reviewList;
 @end

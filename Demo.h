@@ -19,9 +19,23 @@
 +(NSString*)getUPCURL:(NSString*)upcID;
 +(NSString*)getReviewsURL:(NSString*)upcID;
 +(NSString*)getReviewsURLByASIN:(NSString *)asin;
+
+
+
+/*
+Adding the following to your Info.plist will disable ATS
+
+"App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure"
+ 
+ <key>NSAppTransportSecurity</key>
+ <dict>
+ <key>NSAllowsArbitraryLoads</key><true/>
+ </dict>
+ 
+ */
 +(NSDictionary*)getDicFromURL:(NSString*)url;
 +(NSString*)getKeyWordSearchURL:(NSString*)keyword;
-+(NSString*)getImagesURL:(NSString*)itemID;
+
 
 
 +(void)testXMLReader;

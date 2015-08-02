@@ -8,15 +8,11 @@
 
 #import "AddReviewViewController.h"
 #import "TPFloatRatingView.h"
+#import "FacebookShareTest.h"
+#import "SaveToParse.h"
 
 @interface AddReviewViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UILabel *controllerTitleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *postButton;
-@property (weak, nonatomic) IBOutlet TPFloatRatingView *ratingView;
-@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
-@property (weak, nonatomic) IBOutlet UITextField *subjectTextLabel;
-@property (weak, nonatomic) IBOutlet UITextView *reviewDetailTextView;
+
 
 @end
 
@@ -24,22 +20,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewDidAppear:(BOOL)animated{
+    [self initView];
 }
-*/
+
+
+- (IBAction)post:(id)sender {
+    [self saveToParse];
+    [self showAlertView:@"Succeed" message:@"You have post this review"];
+    
+}
+
+- (IBAction)postAndShare:(id)sender {
+    //only share on face book
+    [self shareOnFaceBook:@"hello"];
+}
+
+
+-(void)shareOnFaceBook:(NSString *)content{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        SLComposeViewController *facebookView = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookView setInitialText:content];
+        [facebookView addImage:_productImage];
+        [self presentViewController:facebookView animated:YES completion:nil];
+    }
+}
+
+-(void)initView{
+    _titleLabel.text = _storeDic[@"title"];
+}
+
+-(void)saveToParse{
+    [_storeDic addEntriesFromDictionary:@{@"review":_textView.text}];
+    [SaveToParse saveToParse:@"reviews" properties:_storeDic];
+    
+}
+
+
+-(void)showAlertView:(NSString*)title message:(NSString*)message{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 
 @end

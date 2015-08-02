@@ -10,4 +10,8 @@
 
 @interface ScanBarcodeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *prodcutName;
+
+
+
 @end

@@ -21,11 +21,11 @@
 		B9CAFD871B6170B40035EEA1 /* SearchProductTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD861B6170B40035EEA1 /* SearchProductTableViewController.m */; };
 		B9CAFD8A1B6171700035EEA1 /* ScanBarcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD891B6171700035EEA1 /* ScanBarcodeViewController.m */; };
 		B9CAFD8D1B61745E0035EEA1 /* AddReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD8C1B61745E0035EEA1 /* AddReviewViewController.m */; };
-		B9CAFD901B6178320035EEA1 /* FavouriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD8F1B6178320035EEA1 /* FavouriteTableViewController.m */; };
 		B9CAFD931B6178710035EEA1 /* FavouriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CAFD921B6178710035EEA1 /* FavouriteTableViewCell.m */; };
 		B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DC0F5C1B5F3873009E69F9 /* TPFloatRatingView.m */; };
 		C508D31A1B6B2D4200235373 /* ProductWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C508D3191B6B2D4200235373 /* ProductWebViewController.m */; };
 		C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */; };
+		C552061E1B6D4864008725D2 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C552061D1B6D4864008725D2 /* FavoriteViewController.m */; };
 		C55892531B66B2FB00A8D27C /* sign-in-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = C55892521B66B2FB00A8D27C /* sign-in-facebook.png */; };
 		C594D2AA1B6B196100BA15C6 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = C594D2A91B6B196100BA15C6 /* Product.m */; };
 		C59856BF1B62C02E000E1202 /* TestParse.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856BE1B62C02E000E1202 /* TestParse.m */; };
@@ -92,8 +92,6 @@
 		B9CAFD891B6171700035EEA1 /* ScanBarcodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanBarcodeViewController.m; sourceTree = "<group>"; };
 		B9CAFD8B1B61745E0035EEA1 /* AddReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReviewViewController.h; sourceTree = "<group>"; };
 		B9CAFD8C1B61745E0035EEA1 /* AddReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReviewViewController.m; sourceTree = "<group>"; };
-		B9CAFD8E1B6178320035EEA1 /* FavouriteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteTableViewController.h; sourceTree = "<group>"; };
-		B9CAFD8F1B6178320035EEA1 /* FavouriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteTableViewController.m; sourceTree = "<group>"; };
 		B9CAFD911B6178710035EEA1 /* FavouriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavouriteTableViewCell.h; sourceTree = "<group>"; };
 		B9CAFD921B6178710035EEA1 /* FavouriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavouriteTableViewCell.m; sourceTree = "<group>"; };
 		B9DC0F5B1B5F3873009E69F9 /* TPFloatRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPFloatRatingView.h; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		C508D3191B6B2D4200235373 /* ProductWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductWebViewController.m; sourceTree = "<group>"; };
 		C51FCA621B6A8D59001FA62E /* FacebookShareTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareTest.h; sourceTree = "<group>"; };
 		C51FCA631B6A8D59001FA62E /* FacebookShareTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareTest.m; sourceTree = "<group>"; };
+		C552061C1B6D4864008725D2 /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		C552061D1B6D4864008725D2 /* FavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		C55892521B66B2FB00A8D27C /* sign-in-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-facebook.png"; sourceTree = "<group>"; };
 		C594D2A81B6B196100BA15C6 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		C594D2A91B6B196100BA15C6 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
@@ -240,8 +240,6 @@
 			children = (
 				C55892501B66ABC200A8D27C /* Facebook_Login */,
 				C51FCA661B6A92B6001FA62E /* ScanBarcodeViewController */,
-				B9CAFD8E1B6178320035EEA1 /* FavouriteTableViewController.h */,
-				B9CAFD8F1B6178320035EEA1 /* FavouriteTableViewController.m */,
 				B9CAFD8B1B61745E0035EEA1 /* AddReviewViewController.h */,
 				B9CAFD8C1B61745E0035EEA1 /* AddReviewViewController.m */,
 				B9CAFD7F1B616E8B0035EEA1 /* ProductReviewTableViewController.h */,
@@ -254,6 +252,8 @@
 				E6E2201B1B644AE700B88591 /* SearchTableViewController.m */,
 				C508D3181B6B2D4200235373 /* ProductWebViewController.h */,
 				C508D3191B6B2D4200235373 /* ProductWebViewController.m */,
+				C552061C1B6D4864008725D2 /* FavoriteViewController.h */,
+				C552061D1B6D4864008725D2 /* FavoriteViewController.m */,
 			);
 			name = ViewController;
 			path = Beauty;
@@ -445,7 +445,7 @@
 				TargetAttributes = {
 					B98F07B91B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 9VUC3R8D65;
+						DevelopmentTeam = KCKUZPX7S3;
 					};
 					B98F07D51B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -514,8 +514,8 @@
 				C59856D21B62CA3B000E1202 /* AmazonAPI.m in Sources */,
 				B98F07C31B5DE60B006C8C7C /* AppDelegate.m in Sources */,
 				B9CAFD811B616E8B0035EEA1 /* ProductReviewTableViewController.m in Sources */,
+				C552061E1B6D4864008725D2 /* FavoriteViewController.m in Sources */,
 				C59856BF1B62C02E000E1202 /* TestParse.m in Sources */,
-				B9CAFD901B6178320035EEA1 /* FavouriteTableViewController.m in Sources */,
 				B9CAFD871B6170B40035EEA1 /* SearchProductTableViewController.m in Sources */,
 				C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,

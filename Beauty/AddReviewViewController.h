@@ -10,4 +10,25 @@
 
 @interface AddReviewViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+- (IBAction)post:(id)sender;
+
+
+- (IBAction)postAndShare:(id)sender;
+
+
+@property NSMutableDictionary* storeDic;
+/*
+    key: title,
+*/
+
+
+-(void)shareOnFaceBook:(NSString*)content;
+-(void)saveToParse;
+@property UIImage *productImage;
+
+
 @end

@@ -12,8 +12,13 @@
 #import "AmazonAPI.h"
 
 @interface SearchResultTableViewController : UITableViewController
-@property (strong, nonatomic) NSString *searchText;
 @property NSArray *cellList;
+@property NSDictionary* selectDic;//the selected dic
 
+/*
+ key: title, webURL,image, brand
+ */
+
+@property bool fromFavorite;
 
 @end

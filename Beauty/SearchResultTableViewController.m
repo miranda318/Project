@@ -8,9 +8,10 @@
 
 #import "SearchResultTableViewController.h"
 #import "ProductWebViewController.h"
+#import "ProductReviewTableViewController.h"
 
 @interface SearchResultTableViewController ()
-@property NSDictionary* selectDic;//the selected dic
+
 
 @end
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self searchOnAmazon];
+    //[self searchOnAmazon];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,31 +43,35 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//   ProductListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductListTableViewCell" forIndexPath:indexPath];
-    
+   /*
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if(_cellList !=nil){
         NSDictionary* dic = _cellList[indexPath.row];
-        cell.textLabel.text = dic[@"ItemAttributes"][@"Title"][@"text"];
-//        cell.detailTextLabel.text = dic[@"ItemLinks"][@"ItemLink"][@"Description"][@"text"];
-        cell.detailTextLabel.text = _searchText;
+        cell.textLabel.text = dic[@"title"];
     }
+    
+    return cell;
+    */
+    
+    ProductListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.productNameLabel.text = _cellList[indexPath.row][@"title"];
+    cell.brandLabel.text = _cellList[indexPath.row][@"brand"];
+    
+    NSURL *url = [NSURL URLWithString:_cellList[indexPath.row][@"imageURL"]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.productImage.image= [[UIImage alloc] initWithData:data ];
     
     return cell;
 }
 
 
--(void)searchOnAmazon{
-    NSDictionary* dic = [AmazonAPI getProductsByKeyWorkds:_searchText];
-    _cellList = dic[@"ItemSearchResponse"][@"Items"][@"Item"];
-    [self.tableView reloadData];
-}
+
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     _selectDic = _cellList[indexPath.row];
-    [self performSegueWithIdentifier:@"showProductWeb" sender:self];
+    [self performSegueWithIdentifier:@"showProductDetail" sender:self];
 
 }
 
@@ -74,9 +79,18 @@
 
     if([segue.identifier isEqualToString:@"showProductWeb"]){
         ProductWebViewController* mvc = [segue destinationViewController];
-        mvc.itemDic = _selectDic;
+        mvc.url =_selectDic[@"webURL"];
+    }
+    
+    if([segue.identifier isEqualToString:@"showProductDetail"]){
+        ProductReviewTableViewController* mvc = [segue destinationViewController];
+        
+        mvc.viewDic = _selectDic;
+        mvc.fromFavorite = _fromFavorite;
     }
 
+    
+    
 }
 
 

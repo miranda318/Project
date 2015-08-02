@@ -10,7 +10,7 @@
 #import "TestParse.h"
 #import "TestAmazonAPI.h"
 
-@interface SearchTableViewController : UITableViewController
+@interface SearchTableViewController : UITableViewController<UISearchBarDelegate>
 
 -(void)testServer; // test the parse and amazon api
 

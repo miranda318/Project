@@ -21,7 +21,7 @@
     {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one facebook account setup"
+                                  message:@"You can't send to Facebook right now, make sure your device has an internet connection and you have at least one facebook account setup"
                                   delegate:self
                                   cancelButtonTitle:@"OK"
                                   otherButtonTitles:nil];

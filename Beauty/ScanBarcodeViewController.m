@@ -8,6 +8,9 @@
 
 #import "ScanBarcodeViewController.h"
 #import "PlayerView.h"
+#import "AmazonAPI.h"
+#import "ProductReviewTableViewController.h"
+
 
 @interface ScanBarcodeViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
@@ -31,11 +34,15 @@
 @property UILabel* label;
 
 @property NSString* upc;
+@property NSDictionary * upcDic;
+@property BOOL finished;
 @end
 
 @implementation ScanBarcodeViewController
 
 - (void)viewDidLoad {
+    
+    
     [super viewDidLoad];
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -80,6 +87,10 @@
     [self.view bringSubviewToFront:_label];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    _finished = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -88,6 +99,10 @@
 #pragma mark - Scan
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    if(_finished){
+        return;
+    }
+    
     CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
     NSString *detectionString = nil;
@@ -110,6 +125,12 @@
         {
             _upc = detectionString;
             _label.text = detectionString;
+            
+            //search on amazon
+            [self searchOnAmazon:_upc];
+            
+            
+            _finished = YES;
             break;
         }
         else{
@@ -117,26 +138,61 @@
             _upc = @"none";
         }
         
-<<<<<<< HEAD
-        NSLog(@"here is the upc %@",_upc);
-        _scanResultView.frame = scanResultViewRect;
-=======
->>>>>>> origin/master
     }
-    NSLog(@"%@",_upc);
+   // NSLog(@"%@",_upc);
     _highlightView.frame = highlightViewRect;
     
 }
 
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+-(void)searchOnAmazon:(NSString*)upc{
+    
+    upc = [upc substringFromIndex:1];
+    _upcDic = [AmazonAPI getProductInfoFromUPC:upc];
+    [self performSegueWithIdentifier:@"toProductDetailbyScan" sender:self];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"toProductDetailbyScan"]){
+        
+        ProductReviewTableViewController* mvc = [segue destinationViewController];
+        
+        mvc.upcDic = _upcDic;
+        mvc.viewDic = [self readDic];
+    }
+
+
+}
+
+-(NSDictionary*)readDic{
+    NSLog(@"%@",_upcDic);
+    
+    NSDictionary* attribute =_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"ItemAttributes"];
+    
+    NSString* title = attribute[@"Title"][@"text"];
+    
+   
+    
+    NSString* brand = attribute[@"Brand"][@"text"];
+   
+    
+    
+    NSDictionary* imageSet = _upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"ImageSets"][@"ImageSet"][0];
+    
+    NSString* imageURL = imageSet[@"SmallImage"][@"URL"][@"text"];
+
+    
+    NSString* webURL =_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"DetailPageURL"][@"text"];
+        
+    NSArray* valueArray = @[title,brand,imageURL,webURL];
+    NSArray* keyArray = @[@"title",@"brand",@"imageURL",@"webURL"];
+    
+    NSDictionary* viewDic = [[NSDictionary alloc] initWithObjects:valueArray forKeys:keyArray];
+    
+    return viewDic;
+}
+
+
 
 @end

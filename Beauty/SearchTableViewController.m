@@ -37,7 +37,9 @@
 
 }
 
-
+-(void)viewDidDisappear:(BOOL)animated{
+     [self.view endEditing:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -111,27 +113,22 @@
 */
 #pragma mark - Search bar delegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"Search button hit in Home screen.");
     self.searchString = self.searchBar.text;
-    
-    // Segue to Search Result Tabel View Controller
-    [self performSegueWithIdentifier:@"toProductTableViewBySearch" sender:self];
+    [self performSegueWithIdentifier:@"toSearchPrpdoctBySearch" sender:self];
+   [self.view endEditing:YES];
 }
+
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"toProductTableViewBySearch"])
-    {
-        SearchResultTableViewController *destionationController = segue.destinationViewController;
-        destionationController.searchText = self.searchString;
-    }
+
     
     if ([[segue identifier] isEqualToString:@"toSearchPrpdoctBySearch"])
     {
         SearchResultTableViewController *destionationController = segue.destinationViewController;
-        destionationController.searchText = self.searchString;
+        destionationController.cellList = [self searchOnAmazon:_searchString];
     }
 
 }
@@ -144,6 +141,51 @@
     //[TestParse test];
     [TestAmazonAPI test];
 }
+
+-(NSArray*)searchOnAmazon:(NSString*)searchText{
+    NSDictionary* dic = [AmazonAPI getProductsByKeyWorkds:searchText];
+    NSArray* cellList = dic[@"ItemSearchResponse"][@"Items"][@"Item"];
+    
+    NSMutableArray* resultList = [[NSMutableArray alloc] init];
+    for(int i = 0; i < cellList.count;i ++){
+        NSDictionary* dic = cellList[i];
+        NSString* title = dic[@"ItemAttributes"][@"Title"][@"text"];
+        NSString* webURL = dic[@"DetailPageURL"][@"text"];
+        NSString* brand = dic[@"ItemAttributes"][@"Brand"][@"text"];
+        NSString* imageURL = dic[@"SmallImage"][@"URL"][@"text"];
+        
+        title = [self dealNil:title];
+        webURL = [self dealNil:webURL];
+        brand = [self dealNil:brand];
+        imageURL = [self dealNil:imageURL];
+        
+        
+        
+        NSArray* valueArray = @[title,webURL,brand,imageURL];
+        NSArray* keyArray = @[@"title",@"webURL",@"brand",@"imageURL"];
+        NSDictionary* returnDic = [[NSDictionary alloc] initWithObjects:valueArray forKeys:keyArray];
+        
+
+        
+        NSLog(@"%@",returnDic);
+        [resultList addObject:returnDic];
+    }
+    
+    return resultList;
+}
+
+
+-(NSString*)dealNil:(NSString*)input{
+    if(input == nil){
+        return @"";
+    }
+    return  input;
+}
+
+
+
+
+
 
 
 
