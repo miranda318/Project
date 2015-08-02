@@ -35,6 +35,7 @@
 
 @property NSString* upc;
 @property NSDictionary * upcDic;
+@property NSDictionary* viewDic;// this is the dic that passed to the next
 @property BOOL finished;
 @end
 
@@ -85,6 +86,13 @@
     
     [self.view bringSubviewToFront:_highlightView];
     [self.view bringSubviewToFront:_label];
+    
+    
+    
+    
+    //search on amazon
+    
+    //[self searchOnAmazon:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -149,7 +157,18 @@
     
     upc = [upc substringFromIndex:1];
     _upcDic = [AmazonAPI getProductInfoFromUPC:upc];
-    [self performSegueWithIdentifier:@"toProductDetailbyScan" sender:self];
+    
+    _viewDic = [self readDic];
+    
+    if(_viewDic == nil){
+        //did not find it
+        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:@"Not found" message:@"This product is not found." delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil, nil];
+        _finished = NO;
+    }else{
+    
+        [self performSegueWithIdentifier:@"toProductDetailbyScan" sender:self];
+    }
+    
 }
 
 
@@ -159,7 +178,7 @@
         ProductReviewTableViewController* mvc = [segue destinationViewController];
         
         mvc.upcDic = _upcDic;
-        mvc.viewDic = [self readDic];
+        mvc.viewDic = _viewDic;
     }
 
 
@@ -168,30 +187,67 @@
 -(NSDictionary*)readDic{
     NSLog(@"%@",_upcDic);
     
-    NSDictionary* attribute =_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"ItemAttributes"];
-    
-    NSString* title = attribute[@"Title"][@"text"];
-    
-   
-    
-    NSString* brand = attribute[@"Brand"][@"text"];
-   
-    
-    
-    NSDictionary* imageSet = _upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"ImageSets"][@"ImageSet"][0];
-    
-    NSString* imageURL = imageSet[@"SmallImage"][@"URL"][@"text"];
+    if(_upcDic == nil){
+        NSLog(@"the _upcDic is nil");
+        return nil;
+    }
 
     
-    NSString* webURL =_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][@"DetailPageURL"][@"text"];
+    //check error
+    
+    if(_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"] == nil){
         
+        NSLog(@"error");
+        return nil;
+    }
+    
+    
+ 
+    
+    NSString* title = _upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][0][@"ItemAttributes"][@"Title"][@"text"];
+    
+    NSString* brand = _upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][0][@"ItemAttributes"][@"Brand"][@"text"];
+    
+    
+    NSDictionary* imageSet = _upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][0][@"ImageSets"][@"ImageSet"][0];
+    
+    NSString* imageURL = imageSet[@"SmallImage"][@"URL"][@"text"];
+    
+    
+    NSString* webURL =_upcDic[@"ItemLookupResponse"][@"Items"][@"Item"][0][@"DetailPageURL"][@"text"];
+    
     NSArray* valueArray = @[title,brand,imageURL,webURL];
     NSArray* keyArray = @[@"title",@"brand",@"imageURL",@"webURL"];
     
     NSDictionary* viewDic = [[NSDictionary alloc] initWithObjects:valueArray forKeys:keyArray];
     
     return viewDic;
+   
 }
+
+
+-(NSDictionary*)getDicItem:(NSArray*)array dic:(NSDictionary*)dic {
+
+    NSDictionary* resultDic = [[NSDictionary alloc] initWithDictionary:dic];
+    
+    for(int i = 0;i < array.count; i++){
+        if(resultDic == nil){
+            return nil;
+        }
+        
+        NSString* key = array[i];
+        if([dic valueForKey:key] == nil){
+            NSLog(@"key: %@ is null",key);
+            return nil;
+        }else{
+            resultDic = [resultDic valueForKey:key];
+        }
+    
+    }
+    
+    return resultDic;
+}
+
 
 
 
