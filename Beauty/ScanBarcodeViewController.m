@@ -12,7 +12,7 @@
 #import "ProductReviewTableViewController.h"
 
 
-@interface ScanBarcodeViewController ()
+@interface ScanBarcodeViewController () <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rescanButton;
 @property (weak, nonatomic) IBOutlet PlayerView *playerView;

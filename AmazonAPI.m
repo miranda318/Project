@@ -26,6 +26,9 @@
     NSError *error = nil;
     
     NSDictionary *dictionary = [XMLReader dictionaryForXMLData:data error:&error];
+    if (error) {
+        // Handle error.
+    }
     return dictionary;
 }
 

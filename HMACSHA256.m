@@ -73,7 +73,7 @@
     arrayUrlString = [arrayUrlString sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     
     // Join all items.
-    int i, itemCount = [arrayUrlString count];
+    NSInteger i, itemCount = [arrayUrlString count];
     
     NSString *enumString;
     NSString *appendStringArray;
