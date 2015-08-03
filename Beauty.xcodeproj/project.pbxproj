@@ -71,7 +71,7 @@
 		B98F07C11B5DE60B006C8C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B98F07C21B5DE60B006C8C7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B98F07CB1B5DE60B006C8C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B98F07CD1B5DE60B006C8C7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B98F07CD1B5DE60B006C8C7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Beauty/Images.xcassets; sourceTree = "<group>"; };
 		B98F07D01B5DE60B006C8C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B98F07D61B5DE60B006C8C7C /* BeautyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F07DB1B5DE60B006C8C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,7 +200,6 @@
 			children = (
 				C51FCA6A1B6A9371001FA62E /* View */,
 				C51FCA691B6A9349001FA62E /* Cell */,
-				B98F07CD1B5DE60B006C8C7C /* Images.xcassets */,
 				B98F07CF1B5DE60B006C8C7C /* LaunchScreen.xib */,
 				B98F07BD1B5DE60B006C8C7C /* Supporting Files */,
 			);
@@ -319,6 +318,7 @@
 		C55892511B66B2EE00A8D27C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B98F07CD1B5DE60B006C8C7C /* Images.xcassets */,
 				C55892521B66B2FB00A8D27C /* sign-in-facebook.png */,
 			);
 			name = Images;
@@ -445,7 +445,7 @@
 				TargetAttributes = {
 					B98F07B91B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = KCKUZPX7S3;
+						DevelopmentTeam = 9VUC3R8D65;
 					};
 					B98F07D51B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -662,7 +662,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
 			};
 			name = Debug;
 		};
@@ -680,7 +680,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
 			};
 			name = Release;
 		};
@@ -699,6 +699,7 @@
 				INFOPLIST_FILE = BeautyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beauty.app/Beauty";
 			};
 			name = Debug;
@@ -714,6 +715,7 @@
 				INFOPLIST_FILE = BeautyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beauty.app/Beauty";
 			};
 			name = Release;
