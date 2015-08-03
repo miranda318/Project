@@ -486,6 +486,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="dateLabel" destination="xQr-FQ-43t" id="TCD-JP-flX"/>
+                                    <outlet property="imageView" destination="Y1Q-k9-mLN" id="wc7-R4-tOo"/>
+                                    <outlet property="likeTimeLabel" destination="lhE-ti-nq5" id="DGc-j4-6fg"/>
+                                    <outlet property="reviewLabel" destination="1gn-Ww-8ra" id="r8y-GY-mZB"/>
+                                    <outlet property="titleLabel" destination="pIE-Kw-kyS" id="fQg-WU-BBM"/>
+                                    <outlet property="userNameLabel" destination="mBG-Od-h4Q" id="D5j-4A-Jyn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1431,6 +1439,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="gd7-CD-1BL"/>
         <segue reference="bwZ-BF-0Dj"/>
-        <segue reference="hkc-ii-RXt"/>
+        <segue reference="vXU-9q-54E"/>
     </inferredMetricsTieBreakers>
 </document>

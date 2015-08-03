@@ -87,8 +87,9 @@
     UserReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"
  forIndexPath:indexPath];
     
-    cell.textView.text = _reviewList[indexPath.row][@"review"];
-
+    NSDictionary* dic = _reviewList[indexPath.row];
+    
+    [cell setValues:dic];
     
     return cell;
 }

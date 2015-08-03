@@ -10,6 +10,15 @@
 #import "TPFloatRatingView.h"
 
 @interface UserReviewTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+-(void)setValues:(NSDictionary*)dic;
+
 
 @end
