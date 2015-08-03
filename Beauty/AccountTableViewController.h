@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
+
+@property NSMutableArray* favList; // favorite item list
 @end
