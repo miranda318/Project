@@ -36,6 +36,7 @@
 		C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856CC1B62CA00000E1202 /* XMLReader.m */; };
 		C59856D21B62CA3B000E1202 /* AmazonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856D11B62CA3B000E1202 /* AmazonAPI.m */; };
 		C59856D51B62CBDC000E1202 /* TestAmazonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */; };
+		C5D949811B6FEBBA00E36511 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D949801B6FEBBA00E36511 /* AccountTableViewController.m */; };
 		C5F7259B1B62BD800037E409 /* Readme_weifengcui.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5F7259A1B62BD800037E409 /* Readme_weifengcui.txt */; };
 		C5F7259F1B62BE860037E409 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F7259D1B62BE860037E409 /* Bolts.framework */; };
 		C5F725A01B62BE860037E409 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F7259E1B62BE860037E409 /* Parse.framework */; };
@@ -121,6 +122,8 @@
 		C59856D11B62CA3B000E1202 /* AmazonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonAPI.m; sourceTree = "<group>"; };
 		C59856D31B62CBDC000E1202 /* TestAmazonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAmazonAPI.h; sourceTree = "<group>"; };
 		C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAmazonAPI.m; sourceTree = "<group>"; };
+		C5D9497F1B6FEBBA00E36511 /* AccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewController.h; sourceTree = "<group>"; };
+		C5D949801B6FEBBA00E36511 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
 		C5F7259A1B62BD800037E409 /* Readme_weifengcui.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_weifengcui.txt; sourceTree = "<group>"; };
 		C5F7259D1B62BE860037E409 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C5F7259E1B62BE860037E409 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 		C51FCA651B6A925D001FA62E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5D9497E1B6FEB6E00E36511 /* Search */,
 				C55892501B66ABC200A8D27C /* Facebook_Login */,
 				C51FCA661B6A92B6001FA62E /* ScanBarcodeViewController */,
 				B9CAFD8B1B61745E0035EEA1 /* AddReviewViewController.h */,
@@ -247,8 +251,6 @@
 				B9CAFD7A1B616D100035EEA1 /* SearchResultTableViewController.m */,
 				B9CAFD851B6170B40035EEA1 /* SearchProductTableViewController.h */,
 				B9CAFD861B6170B40035EEA1 /* SearchProductTableViewController.m */,
-				E6E2201A1B644AE700B88591 /* SearchTableViewController.h */,
-				E6E2201B1B644AE700B88591 /* SearchTableViewController.m */,
 				C508D3181B6B2D4200235373 /* ProductWebViewController.h */,
 				C508D3191B6B2D4200235373 /* ProductWebViewController.m */,
 				C552061C1B6D4864008725D2 /* FavoriteViewController.h */,
@@ -311,6 +313,8 @@
 		C55892501B66ABC200A8D27C /* Facebook_Login */ = {
 			isa = PBXGroup;
 			children = (
+				C5D9497F1B6FEBBA00E36511 /* AccountTableViewController.h */,
+				C5D949801B6FEBBA00E36511 /* AccountTableViewController.m */,
 			);
 			name = Facebook_Login;
 			sourceTree = "<group>";
@@ -348,6 +352,15 @@
 				C59856D41B62CBDC000E1202 /* TestAmazonAPI.m */,
 			);
 			name = "Amazon API";
+			sourceTree = "<group>";
+		};
+		C5D9497E1B6FEB6E00E36511 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E6E2201A1B644AE700B88591 /* SearchTableViewController.h */,
+				E6E2201B1B644AE700B88591 /* SearchTableViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		C5F725991B62BD4E0037E409 /* Model */ = {
@@ -445,10 +458,11 @@
 				TargetAttributes = {
 					B98F07B91B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 9VUC3R8D65;
+						DevelopmentTeam = KCKUZPX7S3;
 					};
 					B98F07D51B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = KCKUZPX7S3;
 						TestTargetID = B98F07B91B5DE60B006C8C7C;
 					};
 				};
@@ -500,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CAFD841B616EC10035EEA1 /* UserReviewTableViewCell.m in Sources */,
+				C5D949811B6FEBBA00E36511 /* AccountTableViewController.m in Sources */,
 				C59856CE1B62CA00000E1202 /* Demo.m in Sources */,
 				C59856CF1B62CA00000E1202 /* XMLReader.m in Sources */,
 				B9CAFD7B1B616D100035EEA1 /* SearchResultTableViewController.m in Sources */,
@@ -662,7 +677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -680,7 +695,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -688,6 +703,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -699,7 +716,7 @@
 				INFOPLIST_FILE = BeautyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beauty.app/Beauty";
 			};
 			name = Debug;
@@ -708,6 +725,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -715,7 +734,7 @@
 				INFOPLIST_FILE = BeautyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4a314e09-1b9e-485c-b808-a5715dbea379";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Beauty.app/Beauty";
 			};
 			name = Release;
