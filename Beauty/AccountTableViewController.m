@@ -7,8 +7,12 @@
 //
 
 #import "AccountTableViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface AccountTableViewController ()
+
+-(void)showFacebookPictrues;
 
 @end
 
@@ -17,11 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self checkLoginStatus];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +34,66 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark login with facebook
+-(void)checkLoginStatus{
+    //auto check the profile
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        //if already login
+        NSString* userID = [[FBSDKProfile currentProfile] userID];//get user id
+        [self setFacebookPic:userID]; // set the pictrue
+        
+        //hide the button
+        [_loginButton removeFromSuperview];
+        
+    }
+}
+
+-(void)setFacebookPic:(NSString*)userId{
+    FBSDKProfilePictureView *profilePictureview = [[FBSDKProfilePictureView alloc]initWithFrame:_imageView.frame];
+    [profilePictureview setProfileID:userId];
+    [_imageView removeFromSuperview];
+    [self.view addSubview:profilePictureview];
+}
+
+
+-(void)loginFacebook{
+    NSArray* permission = @[@"email",@"public_profile"];
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:permission handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            // Process error
+        } else if (result.isCancelled) {
+            // Handle cancellations
+        } else {
+            //change the pic
+            [self checkLoginStatus];
+        }
+    }];
+
+}
+
+#pragma mark action
+
+- (IBAction)login_bt_click:(id)sender {
+    
+    
+    [self loginFacebook];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    if(section == 0){
+        return 2;
+    }else{
+        return 3;
+    }
 }
 
 /*
@@ -94,5 +149,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1E852154-E8A6-4F98-8B25-1FAC9848781C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Beauty</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CAA224B06A46992206E66CA4A6E8A287D4C519E1</key>
 		<string>https://github.com/miranda318/Project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Beauty.xcodeproj/project.xcworkspace</string>
+	<string>Beauty.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CAA224B06A46992206E66CA4A6E8A287D4C519E1</key>
