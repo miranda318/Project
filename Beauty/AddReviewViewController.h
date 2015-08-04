@@ -15,7 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (weak, nonatomic) IBOutlet UITextField *reviewTitle;
 
+- (IBAction)cancel:(id)sender;
 
 
 - (IBAction)post:(id)sender;

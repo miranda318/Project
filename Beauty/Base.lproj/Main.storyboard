@@ -83,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6F-Od-kIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="28"/>
+            <point key="canvasLocation" x="1776" y="-2"/>
         </scene>
         <!--Product Web View Controller-->
         <scene sceneID="wnf-Xj-AhY">
@@ -512,7 +512,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTD-YM-mdo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="-1044"/>
+            <point key="canvasLocation" x="2880" y="-826"/>
         </scene>
         <!--Write a Review-->
         <scene sceneID="I1N-0k-Qmz">
@@ -593,7 +593,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Write a Review" id="2ZK-KT-Gy4">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ibJ-ov-0fB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ibJ-ov-0fB">
+                            <connections>
+                                <action selector="cancel:" destination="MuA-Ja-EIg" id="gwR-3z-7hq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="Eif-9n-XxW">
                             <connections>
                                 <action selector="post:" destination="MuA-Ja-EIg" id="pz5-dp-nhV"/>
@@ -602,12 +606,15 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="reviewTitle" destination="SZi-2E-Iau" id="qT1-F7-7AX"/>
+                        <outlet property="textView" destination="Fca-se-pg1" id="IbL-jW-fDJ"/>
                         <outlet property="titleLabel" destination="28M-Xd-yM2" id="JKX-HV-oYx"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="returnToAccount" id="wl3-W6-HIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQw-HG-kLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3871" y="-453"/>
+            <point key="canvasLocation" x="-902" y="272"/>
         </scene>
         <!--Account Table View Controller-->
         <scene sceneID="MkD-Bd-GcI">
@@ -914,7 +921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMf-ps-os6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="807"/>
+            <point key="canvasLocation" x="1022" y="1027"/>
         </scene>
         <!--Sesarch-->
         <scene sceneID="JuO-mx-7T5">
@@ -1444,9 +1451,9 @@
         <image name="treat_icon" width="180" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gd7-CD-1BL"/>
-        <segue reference="GKE-y2-88I"/>
-        <segue reference="vXU-9q-54E"/>
         <segue reference="bwZ-BF-0Dj"/>
+        <segue reference="hkc-ii-RXt"/>
+        <segue reference="GKE-y2-88I"/>
+        <segue reference="gd7-CD-1BL"/>
     </inferredMetricsTieBreakers>
 </document>

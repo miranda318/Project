@@ -31,9 +31,14 @@
 }
 
 
+- (IBAction)cancel:(id)sender {
+    [self performSegueWithIdentifier:@"returnToAccount" sender:self];
+}
+
 - (IBAction)post:(id)sender {
     [self saveToParse];
     [self showAlertView:@"Succeed" message:@"You have post this review"];
+    [self performSegueWithIdentifier:@"returnToAccount" sender:self];
     
 }
 
@@ -59,7 +64,11 @@
 
 -(void)saveToParse{
     [_storeDic addEntriesFromDictionary:@{@"review":_textView.text}];
-    [SaveToParse saveToParse:@"reviews" properties:_storeDic];
+    
+    NSString* userProfileUrl = @"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtf1/v/t1.0-1/p50x50/10516649_831440400213483_7314265121581642256_n.jpg?oh=f791d83e2121522ad1ccc7f6d0708c6f&oe=5644BAD9&__gda__=1447042719_89d6922fc9dbbaa8beab3fdc079c9646";
+    NSDictionary* savedDic = @{@"review":_textView.text,@"title":_reviewTitle.text,@"userName":@"weifengcui",@"userProfileUrl":userProfileUrl};
+    
+    [SaveToParse saveToParse:@"reviews" properties:savedDic];
     
 }
 

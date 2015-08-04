@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
+
+
 -(void)setValues:(NSDictionary*)dic;
 
 
