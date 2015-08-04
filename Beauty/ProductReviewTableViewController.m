@@ -53,6 +53,7 @@
     self.starReviewView.starBorderColor = [UIColor clearColor];
     self.starReviewView.starFillColor = [UIColor colorWithRed:255/255.0f green:173/255.0f blue:8/255.0f alpha:1.0f];
     self.starReviewView.starNormalColor = [UIColor clearColor];
+    self.starReviewView.canRate = NO;
     
     [self.imageLoadingQueue addOperationWithBlock:^{
         NSURL *url = [NSURL URLWithString:_viewDic[@"imageURL"]];
@@ -110,6 +111,7 @@
     cell.starRateView.starBorderColor = [UIColor clearColor];
     cell.starRateView.starFillColor = [UIColor colorWithRed:255/255.0f green:173/255.0f blue:8/255.0f alpha:1.0f];
     cell.starRateView.starNormalColor = [UIColor clearColor];
+    cell.starRateView.canRate = NO;
     
     [self.imageLoadingQueue addOperationWithBlock:^{
         NSURL* url = [NSURL URLWithString:dic[@"userProfileUrl"]];

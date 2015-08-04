@@ -7,12 +7,13 @@
 //
 
 #import "AddReviewViewController.h"
-#import "TPFloatRatingView.h"
+#import "RateView.h"
 #import "FacebookShareTest.h"
 #import "SaveToParse.h"
 
 @interface AddReviewViewController ()
 
+@property (nonatomic, weak) IBOutlet RateView *starRateView;
 
 @end
 
@@ -20,6 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Setup rate view
+    self.starRateView.backgroundColor = [UIColor clearColor];
+    self.starRateView.rating = 5;
+    self.starRateView.starSize = 30;
+    self.starRateView.starBorderColor = [UIColor clearColor];
+    self.starRateView.starFillColor = [UIColor colorWithRed:255/255.0f green:173/255.0f blue:8/255.0f alpha:1.0f];
+    self.starRateView.starNormalColor = [UIColor clearColor];
+    self.starRateView.canRate = YES;
 }
 
 - (void)didReceiveMemoryWarning {
