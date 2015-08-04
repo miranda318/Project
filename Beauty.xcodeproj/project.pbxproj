@@ -307,6 +307,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C5331E271B703ACE002EE7E8 /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RatingView;
+			sourceTree = "<group>";
+		};
 		C558924B1B66A95200A8D27C /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +379,7 @@
 		C5F725991B62BD4E0037E409 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C5331E271B703ACE002EE7E8 /* RatingView */,
 				C594D2A71B6B195100BA15C6 /* Bean */,
 				C558924B1B66A95200A8D27C /* Facebook */,
 				C59856C61B62C9DF000E1202 /* Amazon API */,

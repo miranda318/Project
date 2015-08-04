@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface AddReviewViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+
+
+
 
 - (IBAction)post:(id)sender;
 

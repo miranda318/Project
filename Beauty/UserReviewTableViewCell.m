@@ -29,7 +29,10 @@
     _titleLabel.text = dic[@"title"]; // good
     _reviewLabel.text = dic[@"review"];//good
     
-
+    NSURL* url = [NSURL URLWithString:dic[@"userProfileUrl"]];
+    NSData* data  = [[NSData alloc] initWithContentsOfURL:url];
+    _userImageView.image = [[UIImage alloc] initWithData:data];
+ 
     
 }
 

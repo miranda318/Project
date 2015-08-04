@@ -97,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-99-DEN">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-99-DEN">
                                 <rect key="frame" x="-4" y="64" width="383" height="603"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -230,7 +230,7 @@
                     <navigationItem key="navigationItem" id="dBT-IH-cMJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oq1-bb-cPr">
                             <connections>
-                                <segue destination="5KW-gq-gb2" kind="unwind" unwindAction="unwind:" id="yJq-4Q-Pfh"/>
+                                <segue destination="eHE-Cl-2ph" kind="presentation" id="GKE-y2-88I"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Rescan" id="y7A-g5-nbg"/>
@@ -252,9 +252,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aU-7p-hn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5KW-gq-gb2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="-1038"/>
+            <point key="canvasLocation" x="1983" y="-1032"/>
         </scene>
         <!--Product Review Table View Controller-->
         <scene sceneID="kjr-eD-drV">
@@ -394,7 +393,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="125" id="m6j-j8-Tpn" customClass="UserReviewTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="125" id="m6j-j8-Tpn" customClass="UserReviewTableViewCell">
                                 <rect key="frame" x="0.0" y="286" width="600" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m6j-j8-Tpn" id="tHX-9w-fKO">
@@ -492,6 +491,7 @@
                                     <outlet property="likeTimeLabel" destination="lhE-ti-nq5" id="DGc-j4-6fg"/>
                                     <outlet property="reviewLabel" destination="1gn-Ww-8ra" id="r8y-GY-mZB"/>
                                     <outlet property="titleLabel" destination="pIE-Kw-kyS" id="fQg-WU-BBM"/>
+                                    <outlet property="userImageView" destination="Y1Q-k9-mLN" id="leF-k1-ro9"/>
                                     <outlet property="userNameLabel" destination="mBG-Od-h4Q" id="D5j-4A-Jyn"/>
                                 </connections>
                             </tableViewCell>
@@ -526,7 +526,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28M-Xd-yM2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28M-Xd-yM2">
                                 <rect key="frame" x="16" y="72" width="568" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -536,7 +536,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmJ-Ko-yQI">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmJ-Ko-yQI" customClass="TPFloatRatingView">
                                 <rect key="frame" x="150" y="101" width="300" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -545,7 +545,7 @@
                                     <constraint firstAttribute="height" constant="50" id="xsv-Fm-1xQ"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZi-2E-Iau">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZi-2E-Iau">
                                 <rect key="frame" x="16" y="167" width="568" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -554,7 +554,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How do you like this product? Share it on BeautyBuddy!" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-se-pg1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="How do you like this product? Share it on BeautyBuddy!" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-se-pg1">
                                 <rect key="frame" x="16" y="205" width="568" height="305"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,9 +594,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Write a Review" id="2ZK-KT-Gy4">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ibJ-ov-0fB"/>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="Eif-9n-XxW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="Eif-9n-XxW">
+                            <connections>
+                                <action selector="post:" destination="MuA-Ja-EIg" id="pz5-dp-nhV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="28M-Xd-yM2" id="JKX-HV-oYx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQw-HG-kLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1393,7 +1400,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baH-cW-knM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-1038"/>
+            <point key="canvasLocation" x="1290" y="-978"/>
         </scene>
         <!--Review-->
         <scene sceneID="qsW-W4-zpp">
@@ -1438,7 +1445,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gd7-CD-1BL"/>
-        <segue reference="bwZ-BF-0Dj"/>
+        <segue reference="GKE-y2-88I"/>
         <segue reference="vXU-9q-54E"/>
+        <segue reference="bwZ-BF-0Dj"/>
     </inferredMetricsTieBreakers>
 </document>

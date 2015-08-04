@@ -70,4 +70,12 @@
 }
 
 
+#pragma mark rating view
+
+//-(void)floatRatingView:(TPFloatRatingView *)ratingView continuousRating:(CGFloat)rating{
+//
+//    NSLog(@"%f",rating);
+//}
+
+
 @end
