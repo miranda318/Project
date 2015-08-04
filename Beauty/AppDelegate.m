@@ -25,8 +25,8 @@
     [[UINavigationBar appearance] setBarTintColor:themePurpleColor]; // Navigation bar color.
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]]; // Navigation bar tint color aka buttons' color.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]; // Navigation bar title color.
-    [[UITabBar appearance] setBarTintColor:themePurpleColor]; // Tab bar bar color.
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]]; // Tab bar tint color.
+//    [[UITabBar appearance] setBarTintColor:themePurpleColor]; // Tab bar bar color.
+    [[UITabBar appearance] setTintColor:themePurpleColor]; // Tab bar tint color.
     
     // the following is added by weifeng cui
     [Parse enableLocalDatastore];
