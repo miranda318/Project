@@ -162,7 +162,9 @@
     
     if(_viewDic == nil){
         //did not find it
-        UIAlertView *aletView = [[UIAlertView alloc] initWithTitle:@"Not found" message:@"This product is not found." delegate:self cancelButtonTitle:@"Retry" otherButtonTitles:nil, nil];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops" message:@"Unable to find the product. Please try again later." preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
         _finished = NO;
     }else{
     
@@ -249,9 +251,8 @@
 }
 
 #pragma Navigation
--(IBAction)unwind:(UIStoryboardSegue *)sender {
-    
+- (IBAction)cancelButtonDidPush:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

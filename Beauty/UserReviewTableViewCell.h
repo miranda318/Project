@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TPFloatRatingView.h"
+#import "RateView.h"
 
 @interface UserReviewTableViewCell : UITableViewCell
 
@@ -15,13 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
-
+@property (weak, nonatomic) IBOutlet RateView *starRateView;
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
-
-
--(void)setValues:(NSDictionary*)dic;
-
 
 @end

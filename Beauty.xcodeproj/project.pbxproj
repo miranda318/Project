@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AF06FA91B70573D0086B55E /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF06FA81B70573D0086B55E /* RateView.m */; };
 		B98F07C01B5DE60B006C8C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07BF1B5DE60B006C8C7C /* main.m */; };
 		B98F07C31B5DE60B006C8C7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F07C21B5DE60B006C8C7C /* AppDelegate.m */; };
 		B98F07CC1B5DE60B006C8C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98F07CA1B5DE60B006C8C7C /* Main.storyboard */; };
@@ -68,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AF06FA71B70573D0086B55E /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		5AF06FA81B70573D0086B55E /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
 		B98F07BA1B5DE60B006C8C7C /* Beauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F07BE1B5DE60B006C8C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B98F07BF1B5DE60B006C8C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 		C51FCA6A1B6A9371001FA62E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5AF06FA71B70573D0086B55E /* RateView.h */,
+				5AF06FA81B70573D0086B55E /* RateView.m */,
 				B98F07E61B5DF3B7006C8C7C /* PlayerView.h */,
 				B98F07E71B5DF3B7006C8C7C /* PlayerView.m */,
 				B9DC0F5B1B5F3873009E69F9 /* TPFloatRatingView.h */,
@@ -474,11 +479,11 @@
 				TargetAttributes = {
 					B98F07B91B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = KCKUZPX7S3;
+						DevelopmentTeam = 5LRAHM8S2Z;
 					};
 					B98F07D51B5DE60B006C8C7C = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = KCKUZPX7S3;
+						DevelopmentTeam = 9VUC3R8D65;
 						TestTargetID = B98F07B91B5DE60B006C8C7C;
 					};
 				};
@@ -549,6 +554,7 @@
 				C59856BF1B62C02E000E1202 /* TestParse.m in Sources */,
 				B9CAFD871B6170B40035EEA1 /* SearchProductTableViewController.m in Sources */,
 				C51FCA641B6A8D59001FA62E /* FacebookShareTest.m in Sources */,
+				5AF06FA91B70573D0086B55E /* RateView.m in Sources */,
 				B98F07C01B5DE60B006C8C7C /* main.m in Sources */,
 				B9DC0F5D1B5F3873009E69F9 /* TPFloatRatingView.m in Sources */,
 				C594D2AA1B6B196100BA15C6 /* Product.m in Sources */,
@@ -683,7 +689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nicky Xie (H583WZ62S6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,6 +700,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -701,7 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: nicky Xie (H583WZ62S6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,6 +719,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

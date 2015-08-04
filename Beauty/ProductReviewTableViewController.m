@@ -7,17 +7,21 @@
 //
 
 #import "ProductReviewTableViewController.h"
-#import "TPFloatRatingView.h"
+#import "RateView.h"
 #import "FacebookShareTest.h"
 #import "ProductWebViewController.h"
 #import "SaveToParse.h"
 #import "AddReviewViewController.h"
 #import "UserReviewTableViewCell.h"
 #import "QueryFromParse.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ProductReviewTableViewController ()
 
-
+@property (nonatomic, weak) IBOutlet RateView *starReviewView;
+@property (nonatomic, strong) NSOperationQueue *imageLoadingQueue;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -25,47 +29,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initView];
+    self.imageLoadingQueue = [[NSOperationQueue alloc] init];
+    self.imageLoadingQueue.maxConcurrentOperationCount = 4;
+    self.imageLoadingQueue.name = @"ProductReviewImageLoadingQueue";
     
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     
-    if(_fromFavorite != nil && _fromFavorite == true){
-        _favButton.titleLabel.text = @"Saved To Favorite";
-        [_favButton setEnabled:false];
+    self.tableView.estimatedRowHeight = 125;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    UIColor *themePurpleColor = [UIColor colorWithRed:160/255.0 green:21/255.0 blue:86/255.0 alpha:1];
+    self.favButton.backgroundColor = themePurpleColor;
+    self.reviewButton.backgroundColor = themePurpleColor;
+    self.amazonButton.backgroundColor = themePurpleColor;
+    
+    self.productName.text = _viewDic[@"title"];
+    self.brand.text = _viewDic[@"brand"];
+    // Setup rate view
+    self.starReviewView.backgroundColor = [UIColor clearColor];
+    self.starReviewView.rating = 5; //TODO: Define ratings here. Make sure it's a CGFloat.
+    self.starReviewView.starSize = 30;
+    self.starReviewView.starBorderColor = [UIColor clearColor];
+    self.starReviewView.starFillColor = [UIColor colorWithRed:255/255.0f green:173/255.0f blue:8/255.0f alpha:1.0f];
+    self.starReviewView.starNormalColor = [UIColor clearColor];
+    
+    [self.imageLoadingQueue addOperationWithBlock:^{
+        NSURL *url = [NSURL URLWithString:_viewDic[@"imageURL"]];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.productImage.image= [[UIImage alloc] initWithData:data ];
+        }];
+    }];
+    
+    if(self.fromFavorite){
+        self.favButton.titleLabel.text = @"Saved To Favorite";
+        [self.favButton setEnabled:false];
     }
-    
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     _reviewList = [[NSMutableArray alloc] init];
     [self queryParse];
 }
-
-
-
-
-//set the view
--(void)initView{
-    _productName.text = _viewDic[@"title"];
-    _brand.text = _viewDic[@"brand"];
-    
-    NSURL *url = [NSURL URLWithString:_viewDic[@"imageURL"]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    _productImage.image= [[UIImage alloc] initWithData:data ];
-    
-
-
-}
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -84,12 +90,34 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UserReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"
- forIndexPath:indexPath];
+    UserReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     NSDictionary* dic = _reviewList[indexPath.row];
     
-    [cell setValues:dic];
+    cell.userNameLabel.text = dic[@"userName"];
+    
+    cell.titleLabel.text = dic[@"title"];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[dic[@"time"] doubleValue]];
+    cell.dateLabel.text = [self.dateFormatter stringFromDate:date];
+    
+    cell.reviewLabel.text = dic[@"review"];
+    cell.reviewLabel.numberOfLines = 0;
+    
+    cell.starRateView.backgroundColor = [UIColor clearColor];
+    cell.starRateView.rating = [dic[@"rate"] floatValue]; //TODO: Define ratings here. Make sure it's a CGFloat.
+    cell.starRateView.starSize = 27;
+    cell.starRateView.starBorderColor = [UIColor clearColor];
+    cell.starRateView.starFillColor = [UIColor colorWithRed:255/255.0f green:173/255.0f blue:8/255.0f alpha:1.0f];
+    cell.starRateView.starNormalColor = [UIColor clearColor];
+    
+    [self.imageLoadingQueue addOperationWithBlock:^{
+        NSURL* url = [NSURL URLWithString:dic[@"userProfileUrl"]];
+        NSData* data  = [[NSData alloc] initWithContentsOfURL:url];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            cell.userImageView.image = [[UIImage alloc] initWithData:data];
+        }];
+    }];
     
     return cell;
 }
@@ -105,12 +133,15 @@
 }
 
 - (IBAction)writeReview:(id)sender {
-    
-    [self performSegueWithIdentifier:@"writeReviews" sender:self];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self performSegueWithIdentifier:@"writeReviews" sender:self];
+    }
+    else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops" message:@"To write a review, you have to sign in first." preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
-
-
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
@@ -129,13 +160,7 @@
     }
 }
 
-
-
-
-
 - (IBAction)addToFavorite:(id)sender {
-    
-    
     //save to parse, the viewDic
      _favButton.titleLabel.text = @"Saved To Favorite";
     [_favButton setEnabled:false];
@@ -172,8 +197,5 @@
     }];
     
 }
-
-
-
 
 @end

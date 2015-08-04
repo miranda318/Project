@@ -30,6 +30,9 @@
 - (IBAction)addToFavorite:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
-@property bool fromFavorite;
+@property (weak, nonatomic) IBOutlet UIButton *reviewButton;
+@property (weak, nonatomic) IBOutlet UIButton *amazonButton;
+
+@property BOOL fromFavorite;
 @property NSMutableArray * reviewList;
 @end

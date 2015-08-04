@@ -11,48 +11,34 @@
 @implementation Demo
 
 +(void)UPCRequest{
-
 //    NSString* url = [self getUPCURL];
 //    NSLog(@"url :%@",url);
-
-
 }
 
-
-
-
-
-
-
 +(NSString*)getUPCURL:(NSString*)upcID{
-    
-    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
-    NSString* AWS_SECRET=@"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";
+#warning Add AWS access key ID and secret!
+    NSString* AWSAccessKeyID=@"";
+    NSString* AWS_SECRET=@"";
     
     NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Large&SearchIndex=All&IdType=UPC&ItemId=%@&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",upcID,AWSAccessKeyID];
     
     NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
-    NSURL *url	= [NSURL URLWithString:signedURLString];
-    return url;
+    return signedURLString;
     
 }
 
-
 +(NSString*)getReviewsURL:(NSString*)upcID{
     return [self getReviewSURL_BYTYPE:upcID type:@"UPC"];
-
 }
 
 +(NSString*)getReviewsURLByASIN:(NSString *)asin{
-
     return [self getReviewSURL_BYTYPE:asin type:@"ASIN"];
 }
 
-
 +(NSString*)getReviewSURL_BYTYPE:(NSString*)upcID type:(NSString*)type{
-
-    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
-    NSString* AWS_SECRET=@"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";
+#warning Add AWS access key ID and secret!
+    NSString* AWSAccessKeyID=@"";
+    NSString* AWS_SECRET=@"";
     
     NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&ResponseGroup=Reviews&IdType=%@&ItemId=%@&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",type,upcID,AWSAccessKeyID];
     
@@ -62,23 +48,19 @@
     }
     
     NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
-    NSURL *url	= [NSURL URLWithString:signedURLString];
-    return url;
+    return signedURLString;
 
 }
 
-
-
-
 +(NSString*)getKeyWordSearchURL:(NSString*)keyword{
-    NSString* AWSAccessKeyID=@"AKIAIX5TQ2GXCVNFZPZA";
-    NSString* AWS_SECRET=@"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";
+#warning Add AWS access key ID and secret!
+    NSString* AWSAccessKeyID=@"";
+    NSString* AWS_SECRET=@"";
     
     NSString* urlString = [NSString stringWithFormat: @"http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemSearch&ResponseGroup=Large&SearchIndex=All&Keywords=%@&AWSAccessKeyId=%@&AssociateTag=weifcuiperswe-20",keyword,AWSAccessKeyID];
     
     NSString *signedURLString = [HMACSHA256 getSignedRequest:urlString withSecret:AWS_SECRET];
-    NSURL *url	= [NSURL URLWithString:signedURLString];
-    return url;
+    return signedURLString;
     
 }
 
@@ -94,7 +76,6 @@
     
     return dictionary;
 }
-
 
 +(void)testXMLReader{
 

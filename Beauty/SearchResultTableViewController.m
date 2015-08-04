@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     NSLog(@"there are %td in cell list",_cellList);
+     NSLog(@"there are %@ in cell list",_cellList);
 }
 
 - (void)didReceiveMemoryWarning {
